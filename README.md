@@ -6,6 +6,8 @@ If points are on land, the function will attempt to find the nearest point on th
 
 **Not for routing purposes!** This library was developed to generate realistic-looking searoutes for visualizations of maritime routes, not for mariners to route their ships. 
 
+![Searoute map](./assets/searoute.png)
+
 ## Installation
 
 ~~~bash
