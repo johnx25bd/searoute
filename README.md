@@ -55,6 +55,20 @@ var routeMiles = searoute(origin, destination, "miles");
 
 ~~~
 
+## Author
+
+Developed by [Sophia Systems](https://sophiasystems.io)
+
+## License
+
+This project is licensed under the [Mozilla Public License 2.0 (MPL-2.0)](https://mozilla.org/MPL/2.0/).
+
 ## Credits
 
-Based on Eurostat's [Searoute Java library](https://github.com/eurostat/searoute) and Dijkstra's algorithm implemented by [perliedman](https://www.liedman.net/geojson-path-finder/).
+Based on Eurostat's [Searoute Java library](https://github.com/eurostat/searoute) (EUPL-1.2 licensed).
+
+The maritime network data is derived from Eurostat's marnet dataset, which incorporates:
+- [Oak Ridge National Labs CTA Transportation Network Group](https://cta.ornl.gov/transnet/), Global Shipping Lane Network (2000)
+- Additional European coastal routes based on AIS data (Eurostat)
+
+Dijkstra's algorithm implemented by [perliedman/geojson-path-finder](https://www.liedman.net/geojson-path-finder/).
