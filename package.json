@@ -2,7 +2,14 @@
   "name": "searoute-js",
   "version": "0.1.0",
   "description": "A package to calculate the shortest sea route between two points on Earth.",
+  "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,9 +32,11 @@
   },
   "homepage": "https://github.com/johnx25bd/searoute#readme",
   "dependencies": {
-    "@turf/helpers": "^6.1.4",
-    "@turf/length": "^6.0.2",
-    "@turf/point-to-line-distance": "^6.0.0",
-    "geojson-path-finder": "^1.5.2"
+    "@turf/helpers": "^6.5.0",
+    "@turf/length": "^6.5.0",
+    "@turf/meta": "^7.3.4",
+    "@turf/point-to-line-distance": "^6.5.0",
+    "@turf/rhumb-distance": "^7.3.4",
+    "geojson-path-finder": "^1.5.3"
   }
 }

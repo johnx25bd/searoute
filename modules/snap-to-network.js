@@ -1,13 +1,6 @@
-// import { coordEach, featureEach } from '@turf/meta';
-// import { rhumbDistance, pointToLineDistance } from '@turf/measurement';
-// import { point } from '@turf/helper';
 const turf = ('@turf/turf');
 
-// const meta = require('@turf/meta');
-// const measurement = require('@turf/measurement');
-// const helper = require('@turf/helper');
-
-module.export = function snapToNetwork(point) {
+export default function snapToNetwork(point) {
 
     var nearestLineIndex = 0,
         distance = 30000;

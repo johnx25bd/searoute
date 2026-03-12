@@ -1,14 +1,14 @@
-const turfMeta = require('@turf/meta');
-const turfHelpers = require('@turf/helpers');
-const length = require('@turf/length').default;
-const rhumbDistance = require('@turf/rhumb-distance').default;
-const pointToLineDistance = require('@turf/point-to-line-distance').default;
+import * as turfMeta from '@turf/meta';
+import * as turfHelpers from '@turf/helpers';
+import length from '@turf/length';
+import rhumbDistance from '@turf/rhumb-distance';
+import pointToLineDistance from '@turf/point-to-line-distance';
+import RouteFinder from 'geojson-path-finder';
+import marnet from './data/marnet_densified.json' with { type: 'json' };
 
-const RouteFinder = require('geojson-path-finder');
-const marnet = require('./data/marnet_densified.json');
 const routefinder = new RouteFinder(marnet);
 
-module.exports = function searoute(origin, destination, units = 'nm') {
+export default function searoute(origin, destination, units = 'nm') {
 
     try {
         let snappedOrigin = snapToNetwork(origin),
