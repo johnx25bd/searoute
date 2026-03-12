@@ -3,15 +3,25 @@
   "version": "0.1.0",
   "description": "A package to calculate the shortest sea route between two points on Earth.",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -38,5 +48,12 @@
     "@turf/point-to-line-distance": "^7.3.4",
     "@turf/rhumb-distance": "^7.3.4",
     "geojson-path-finder": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^24.7.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^4.0.7"
   }
 }

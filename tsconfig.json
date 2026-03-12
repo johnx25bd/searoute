@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": ["node", "vitest/globals"],
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "vite.config.ts", "vitest.config.ts"]
+}
