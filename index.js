@@ -3,18 +3,18 @@ import * as turfHelpers from '@turf/helpers';
 import length from '@turf/length';
 import rhumbDistance from '@turf/rhumb-distance';
 import pointToLineDistance from '@turf/point-to-line-distance';
-import RouteFinder from 'geojson-path-finder';
+import PathFinderModule from 'geojson-path-finder';
 import marnet from './data/marnet_densified.json' with { type: 'json' };
 
-const routefinder = new RouteFinder(marnet);
+const PathFinder = PathFinderModule.default ?? PathFinderModule;
+const pathfinder = new PathFinder(marnet);
 
 export default function searoute(origin, destination, units = 'nm') {
-
     try {
         let snappedOrigin = snapToNetwork(origin),
             snappedDestination = snapToNetwork(destination);
 
-        let route = routefinder.findPath(snappedOrigin, snappedDestination);
+        let route = pathfinder.findPath(snappedOrigin, snappedDestination);
 
         if (route == null) {
             console.log("No route found");
