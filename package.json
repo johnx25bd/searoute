@@ -1,5 +1,5 @@
 {
-  "name": "searoute-js",
+  "name": "searoute-ts",
   "version": "0.1.0",
   "description": "A package to calculate the shortest sea route between two points on Earth.",
   "type": "module",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnx25bd/searoute.git"
+    "url": "git+https://github.com/albertofcasuso/searoute-ts.git"
   },
   "keywords": [
     "maritime",
@@ -35,12 +35,12 @@
     "dijkstra",
     "javascript"
   ],
-  "author": "@johnx25bd",
+  "author": "Alberto Casuso (@afcasuso)",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/johnx25bd/searoute/issues"
+    "url": "https://github.com/albertofcasuso/searoute-ts/issues"
   },
-  "homepage": "https://github.com/johnx25bd/searoute#readme",
+  "homepage": "https://github.com/albertofcasuso/searoute-ts#readme",
   "dependencies": {
     "@turf/helpers": "^7.3.4",
     "@turf/length": "^7.3.4",

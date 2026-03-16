@@ -1,3 +1,19 @@
+Fork Notice for searoute-ts
+===========================
+
+This project (`searoute-ts`) is a maintained fork of the original
+`searoute-js` project:
+- Original repository: https://github.com/johnx25bd/searoute
+- Fork repository: https://github.com/albertofcasuso/searoute-ts
+
+Fork maintenance and modifications (including TypeScript typings and ESM
+migration) are by Alberto Casuso.
+
+This notice does not modify the license terms below. The project remains
+licensed under the Mozilla Public License 2.0 (MPL-2.0).
+
+-----------------------------------------------------------------------
+
 Mozilla Public License Version 2.0
 ==================================
 
