@@ -28,6 +28,11 @@ module.exports = function searoute(origin, destination, units = 'nm') {
             ? length(lineString, { units: 'miles' }) * 1.15078
             : length(lineString, { units: units });
 
+        let firstRoutePoint = route.path[0];
+        let lastRoutePoint = route.path[route.path.length - 1];
+        lineString.properties.originSnapDistance = distanceInUnits(origin.geometry.coordinates, firstRoutePoint, units);
+        lineString.properties.destinationSnapDistance = distanceInUnits(destination.geometry.coordinates, lastRoutePoint, units);
+
         return lineString;
     } catch (err) {
         throw err;
@@ -64,4 +69,11 @@ function snapToNetwork(point) {
     });
 
     return turfHelpers.point(nearestCoord);
+}
+
+function distanceInUnits(fromCoord, toCoord, units) {
+    let line = turfHelpers.lineString([fromCoord, toCoord]);
+    return units == 'nm'
+        ? length(line, { units: 'miles' }) * 1.15078
+        : length(line, { units: units });
 }
