@@ -49,7 +49,6 @@ function snapToNetwork(point) {
 
     var nearestVertexDist = null,
         nearestCoord = null;
-    console.log(nearestLineIndex)
     turfMeta.coordEach(marnet.features[nearestLineIndex], function (currentCoord) {
 
         let distToVertex = rhumbDistance(point, currentCoord);
