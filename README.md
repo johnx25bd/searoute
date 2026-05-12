@@ -52,6 +52,17 @@ var route = searoute(origin, destination);
 // Defaults to nautical miles, can be degrees, radians, miles, or kilometers.
 var routeMiles = searoute(origin, destination, "miles");
 
+// The returned LineString's `properties` includes:
+//   - units: the units used for length and snap-distance values
+//   - length: total route length in the specified units
+//   - originSnapDistance: distance from the input origin to where the route actually starts
+//     (the input is snapped to the nearest point on the maritime network)
+//   - destinationSnapDistance: distance from the input destination to where the route actually ends
+//
+// `originSnapDistance` and `destinationSnapDistance` are useful for telling whether an input
+// point was on or near the sea — small values mean a clean snap, large values usually mean
+// the input was inland.
+
 
 ~~~
 
