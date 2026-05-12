@@ -30,8 +30,8 @@ module.exports = function searoute(origin, destination, units = 'nm') {
 
         let firstRoutePoint = route.path[0];
         let lastRoutePoint = route.path[route.path.length - 1];
-        lineString.properties.originSnapDistance = distanceInUnits(origin.geometry.coordinates, firstRoutePoint, units);
-        lineString.properties.destinationSnapDistance = distanceInUnits(destination.geometry.coordinates, lastRoutePoint, units);
+        lineString.properties.originSnapDistance = distanceInUnits(getCoord(origin), firstRoutePoint, units);
+        lineString.properties.destinationSnapDistance = distanceInUnits(getCoord(destination), lastRoutePoint, units);
 
         return lineString;
     } catch (err) {
@@ -76,4 +76,8 @@ function distanceInUnits(fromCoord, toCoord, units) {
     return units == 'nm'
         ? length(line, { units: 'miles' }) * 1.15078
         : length(line, { units: units });
+}
+
+function getCoord(input) {
+    return input.geometry ? input.geometry.coordinates : input.coordinates;
 }
